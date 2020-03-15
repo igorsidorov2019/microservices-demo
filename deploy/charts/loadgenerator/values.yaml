@@ -1,0 +1,5 @@
+image:
+  repository: yellowboy/loadgenerator
+  tag: v0.0.1
+ingress:
+  host: develop.kubernetes-platform-demo.express42.io
