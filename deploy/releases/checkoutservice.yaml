@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: checkuotservice
+  namespace: microservices-demo
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+    flux.weave.works/tag.chart-image: semver:~v0.0
+spec:
+  releaseName: checkuotservice
+  helmVersion: v3
+  chart:
+    git: git@github.com:igorsidorov2019/microservices-demo.git
+    ref: master
+    path: deploy/charts/checkuotservice
+  values:
+    image:
+      repository: yellowboy/checkuotservice
+      tag: v0.0.1
