@@ -1,3 +1,4 @@
+{{ if eq .Values.environment "production" }}
 apiVersion: flagger.app/v1alpha3
 kind: Canary
 metadata:
@@ -31,4 +32,5 @@ spec:
     - name: request-success-rate
       threshold: 99
       interval: 1m
+{{ end }}
 
