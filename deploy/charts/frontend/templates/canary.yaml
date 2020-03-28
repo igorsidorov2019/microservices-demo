@@ -2,32 +2,33 @@ apiVersion: flagger.app/v1alpha3
 kind: Canary
 metadata:
   name: frontend
-  namespace: microservices-demo
 spec:
-  provider: istio
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: frontend
+  progressDeadlineSeconds: 60
   service:
     port: 80
     targetPort: 8080
     gateways:
     - frontend-gateway
     hosts:
-    - "*"
+    - {{ .Values.ingress.host }}
     trafficPolicy:
       tls:
         mode: DISABLE
+    retries:
+      attempts: 3
+      perTryTimeout: 1s
+      retryOn: "gateway-error,connect-failure,refused-stream"
   canaryAnalysis:
-    interval: 30s
-    threshold: 5
+    interval: 1m
+    threshold: 1
     maxWeight: 30
-    stepWeight: 5
+    stepWeight: 10
     metrics:
     - name: request-success-rate
       threshold: 99
-      interval: 30s
-    - name: request-duration
-      threshold: 500
-      interval: 30s
+      interval: 1m
+
