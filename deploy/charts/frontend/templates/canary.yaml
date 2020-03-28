@@ -32,5 +32,5 @@ spec:
     - name: request-success-rate
       threshold: 99
       interval: 1m
-{{ end }}
+{{ end }} 
 
