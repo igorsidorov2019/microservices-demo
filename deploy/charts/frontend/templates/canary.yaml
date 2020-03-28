@@ -22,7 +22,7 @@ spec:
       attempts: 3
       perTryTimeout: 1s
       retryOn: "gateway-error,connect-failure,refused-stream"
-  canaryAnalysis:
+  analysis:
     interval: 1m
     threshold: 1
     maxWeight: 30
