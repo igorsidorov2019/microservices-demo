@@ -1,4 +1,3 @@
-{{ if eq .Values.environment "production" }}
 apiVersion: flagger.app/v1alpha3
 kind: Canary
 metadata:
