@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-hipster
+  name: frontend
 spec:
   selector:
     matchLabels:
