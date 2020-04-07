@@ -24,11 +24,11 @@ spec:
     threshold: 5 
     maxWeight: 30 
     stepWeight: 5 
-    metrics: 
-    - name: latency
-      templateRef:
-        name: latency
-        namespace: istio-system
-      thresholdRange:
-        max: 500
-      interval: 1m
+    #    metrics: 
+    #- name: latency
+    #  templateRef:
+    #    name: latency
+    #    namespace: istio-system
+    #  thresholdRange:
+    #    max: 500
+    #  interval: 1m
