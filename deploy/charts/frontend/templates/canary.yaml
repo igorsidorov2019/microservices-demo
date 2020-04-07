@@ -25,9 +25,6 @@ spec:
     maxWeight: 30 
     stepWeight: 5 
     metrics: 
-    - name: request-success-rate 
-      threshold: 99 
-      interval: 30s 
     - name: latency
       templateRef:
         name: latency
